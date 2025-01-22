@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "description": "The sample Node.js project with Next.js frontend",
   "scripts": {
-    "start": "node server/src/server.js",
-    "server": "node server/src/server.js",
-    "client": "cd client && npm run dev",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "cd client && npm run build",
-    "install:all": "npm install && cd client && npm install"
+    "start": "bun server/src/server.js",
+    "server": "bun server/src/server.js",
+    "client": "cd client && bun run dev",
+    "dev": "concurrently \"bun run server\" \"bun run client\"",
+    "build": "cd client && bun run build",
+    "install:all": "bun install && cd client && bun install"
   },
   "dependencies": {
     "clsx": "^2.1.1",

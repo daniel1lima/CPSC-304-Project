@@ -79,12 +79,14 @@
 ## Running the Project
 1. Install dependencies:
    ```bash
-   bun install
+   bun install:all
    ```
 
 2. Start the development server:
    ```bash
    bun dev
+   
+   #Make sure you are in the project root, not /client - since this is a monorepo running from root will run the express backend in tandem
    ```
 
 The application should now be running at `http://localhost:3000`
