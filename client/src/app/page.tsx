@@ -39,12 +39,12 @@ export default function Home() {
   console.log(tableData)
 
   return (
-    <main className="min-h-screen p-24">
+    <main className="min-h-screen p-24 bg-black">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-8">
+        <h1 className="text-4xl font-bold mb-8 text-white">
           Database Connection Status: {dbStatus}
         </h1>
-        <h2 className="text-2xl font-semibold mb-4">DemoTable Data</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-white">DemoTable Data</h2>
         <DemoTable 
           data={tableData}
           isLoading={isLoading}
