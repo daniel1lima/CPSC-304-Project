@@ -1,5 +1,7 @@
 const express = require('express');
-const appController = require('./appController');
+const path = require('path');
+const appController = require('./src/controllers/appController');
+const initializeDatabase = require('./utils/initDb');
 
 // Load environment variables from .env file
 // Ensure your .env file has the required database credentials.
@@ -20,6 +22,15 @@ app.use(express.json());             // Parse incoming JSON payloads
 //     res.sendFile(__dirname + '/public/DEFAULT_FILE_NAME.html');
 // });
 
+// Initialize database
+initializeDatabase()
+  .then(() => {
+    console.log('Database initialized successfully');
+  })
+  .catch(err => {
+    console.error('Failed to initialize database:', err);
+    process.exit(1);
+  });
 
 // mount the router
 app.use('/', appController);
